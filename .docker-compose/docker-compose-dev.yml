@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  node:
+    build:
+      context: ./node
+      dockerfile: ./node/Dockerfile
+    volumes:
+      - ./node:/usr/src/app
+    environment:
+  ration-php:
+    build:
+      context: ./php
+      dockerfile: ./php/Dockerfile
+    ports:
+      - "8090:80"
+    volumes:
+      - ./php:/var/www
+    environment:
+
+volumes:
+  client-bundles:
